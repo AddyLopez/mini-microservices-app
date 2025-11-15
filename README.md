@@ -1,6 +1,6 @@
 # mini-microservices-app
 
-A mini microservices app
+A mini microservices app, using React, Express, and NodeJS
 
 ## Learning Objectives
 
