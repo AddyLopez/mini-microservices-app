@@ -22,10 +22,11 @@ const CommentList = ({ postId }) => {
     return <li key={comment.id}>{comment.content}</li>;
   });
 
-  return;
-  <>
-    <ul>{renderedComments}</ul>;
-  </>;
+  return (
+    <div>
+      <ul>{renderedComments}</ul>
+    </div>
+  );
 };
 
 export default CommentList;
