@@ -17,7 +17,7 @@ const PostList = () => {
 
   // console.log(posts);
 
-  // Return array of values which are posts objects,
+  // Return array of values which are posts objects, map over the array and render the title
   const renderedPosts = Object.values(posts).map((post) => {
     return (
       <>
