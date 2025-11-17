@@ -15,11 +15,28 @@ const PostList = () => {
     fetchPosts();
   }, []); // Run this function only once, upon loading
 
-  console.log(posts);
+  // console.log(posts);
+
+  // Return array of values which are posts objects,
+  const renderedPosts = Object.values(posts).map((post) => {
+    return (
+      <>
+        <div
+          className="card"
+          key={post.id}
+          style={{ width: "30%", marginBottom: "20px" }}
+        >
+          <div className="card-body">
+            <h3>{post.title}</h3>
+          </div>
+        </div>
+      </>
+    );
+  });
 
   return (
-    <section className="PostList">
-      <h2>PostList</h2>
+    <section className="PostList d-flex flex-row flex-wrap justify-content-between">
+      {renderedPosts}
     </section>
   );
 };
