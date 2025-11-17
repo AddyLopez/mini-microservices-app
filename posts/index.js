@@ -7,12 +7,15 @@ app.use(bodyParser.json());
 
 const posts = {}; // Store every post created
 
+// Get all posts
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
+// Create a new post
 app.post("/posts", (req, res) => {
   const id = randomBytes(4).toString("hex"); // Generate random id
+  // Expected request body: { title: string }
   const { title } = req.body;
 
   posts[id] = {
