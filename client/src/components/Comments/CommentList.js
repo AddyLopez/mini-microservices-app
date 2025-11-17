@@ -6,7 +6,7 @@ const CommentList = ({ postId }) => {
 
   const fetchData = async () => {
     const response = await axios.get(
-      `http://localhost:4001/${postId}/comments`
+      `http://localhost:4001/posts/${postId}/comments`
     );
     const data = response.data;
 
@@ -22,7 +22,10 @@ const CommentList = ({ postId }) => {
     return <li key={comment.id}>{comment.content}</li>;
   });
 
-  return <ul>{renderedComments}</ul>;
+  return;
+  <>
+    <ul>{renderedComments}</ul>;
+  </>;
 };
 
 export default CommentList;

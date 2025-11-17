@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CommentCreate from "../Comments/CommentCreate";
+import CommentList from "../Comments/CommentList";
 
 const PostList = () => {
   const [posts, setPosts] = useState({}); // Post service returns an object with a nested array
@@ -29,6 +30,7 @@ const PostList = () => {
         >
           <div className="card-body">
             <h3>{post.title}</h3>
+            <CommentList postId={post.id} />
             <CommentCreate postId={post.id} />
           </div>
         </div>
