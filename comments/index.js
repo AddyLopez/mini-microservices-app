@@ -8,7 +8,9 @@ app.use(bodyParser.json());
 const commentsByPostId = {};
 
 // Get array of comments associated with particular post's ID
-app.get("posts/:id/comments", (req, res) => {});
+app.get("posts/:id/comments", (req, res) => {
+  res.send(commentsByPostId[req.params.id] || []); // Send array of comments at the given id. If undefined, send new empty array.
+});
 
 app.post("posts/:id/comments", (req, res) => {
   const commentId = randomBytes(4).toString("hex"); // Generate random ID for comment
