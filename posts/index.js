@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
 
-app.get("/posts", (req, res) => {});
+const posts = {}; // Store every post created
+
+app.get("/posts", (req, res) => {
+  res.send(posts);
+});
 
 app.post("/posts", (req, res) => {});
 
