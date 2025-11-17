@@ -20,6 +20,8 @@ const CommentCreate = ({ postId }) => {
     setContent(""); // Reset input box
   };
 
+  // Comment displayed in PostList component
+
   return (
     <section>
       <form onSubmit={handleSubmit}>
