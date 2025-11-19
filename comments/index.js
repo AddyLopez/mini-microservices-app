@@ -43,6 +43,14 @@ app.post("/posts/:id/comments", async (req, res) => {
   res.status(201).send(comments); // Send back entire array of comments
 });
 
+app.post("/events", (req, res) => {
+  // Print out type of event received from event bus
+  console.log("Event Received", req.body.type);
+
+  // Respond to post request and indicate it went fine
+  res.send({});
+});
+
 app.listen(4001, () => {
   console.log("Listening on port 4001");
 });
