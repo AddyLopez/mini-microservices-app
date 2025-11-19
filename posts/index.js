@@ -41,7 +41,7 @@ app.post("/posts", async (req, res) => {
 
 app.post("/events", (req, res) => {
   // Print out type of event received from event bus
-  console.log("Received Event", req.body.type);
+  console.log("Event Received", req.body.type);
 
   // Respond to post request and indicate it went fine
   res.send({});
