@@ -24,11 +24,11 @@ app.post("/events", (req, res) => {
     posts[id] = { id, title, comments: [] };
   }
   if (type === "CommentCreated") {
-    const { id, content, postId } = data;
+    const { id, content, postId, status } = data;
 
     // Add comment to comments array of a given post
     const post = posts[postId];
-    post.comments.push({ id, content });
+    post.comments.push({ id, content, status });
   }
   console.log(posts);
   // Indicate by response empty object that event was received and processed
