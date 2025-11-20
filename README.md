@@ -24,7 +24,7 @@ Axios, Nodemon, CORS (errors handling), Express route handling, JSON parsing, Ra
 
 ## Preview
 
-Screenshot of Network tab to show comment moderation service in action. Notice that the status of a given comment.
+Screenshot of Network tab to show comment moderation service in action. Notice the status of a given comment. If the comment contains the word "orange," then it is rejected; otherwise it is approved.
 
 ![comment moderation](./client/public/preview/comment-moderating.png)
 
