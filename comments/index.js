@@ -21,7 +21,7 @@ app.post("/posts/:id/comments", async (req, res) => {
   const { content } = req.body;
 
   const comments = commentsByPostId[req.params.id] || []; // Check if there's already an array for the given id. If undefined, return new empty array.
-  comments.push({ id: commentId, content }); // Push new comment into comments array
+  comments.push({ id: commentId, content, status: "pending" }); // Push new comment into comments array
 
   // Assign comments array back to given post inside commentsByPostId object to update it with new content
   commentsByPostId[req.params.id] = comments;
