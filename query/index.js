@@ -30,7 +30,7 @@ app.post("/events", (req, res) => {
     const post = posts[postId];
     post.comments.push({ id, content });
   }
-
+  console.log(posts);
   // Indicate by response empty object that event was received and processed
   res.send({});
 });
