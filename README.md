@@ -15,9 +15,10 @@ Data are stored in memory (not in a database) and so won't persist across sessio
 - To gain a better conceptual and practical understanding of the advantages and complexities of microservices architecture.
 - To build an application with microservices for two resources--posts and comments--then adding a query service and a comment moderation service.
 - To build the architecture with an informed understanding of the tradeoffs of synchronous and asynchronous communication between services.
-- To implement a basic event bus from scratch, which handles the emitting and processing of different events across microservices without introducing any direct dependencies.
+- To implement a basic event bus from scratch, which handles the emitting and processing of different events across microservices without introducing any direct dependencies. (Disclaimer: This implementation is not a production-grade event bus; it's for learning purposes.)
 - To gain experience handling updates to resources via communication with the event bus.
 - To observe the independence of services. This was done by pausing servers here and there in order to interrupt a given service and then testing the continued functionality of other services which were not interrupted.
+- To implement event syncing, meaning that even if a service goes down temporarily, the event bus will still have access to every event for its execution once the service is up and running again.
 
 ### Secondary Technologies & Techniques
 
