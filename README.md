@@ -20,7 +20,7 @@ Data are stored in memory (not in a database) and so won't persist across sessio
 
 ### Secondary Technologies & Techniques
 
-Axios, Nodemon, CORS (errors handling), Express route handling, React Hooks, Bootstrap (for rapid prototyping), Diagrams.net (for visualizing microservices architecture and communication between services), zsh (command line), Google Chrome Developer Tools Network tab monitoring for GET and POST requests while testing services
+Axios, Nodemon, CORS (errors handling), Express route handling, JSON parsing, Random Bytes (for generating random ids), React Hooks, Bootstrap (for rapid prototyping), Diagrams.net (for visualizing microservices architecture and communication between services), zsh (command line), Google Chrome Developer Tools Network tab monitoring for GET and POST requests while testing services
 
 ### Course Attribution
 
