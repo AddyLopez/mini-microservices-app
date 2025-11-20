@@ -24,7 +24,7 @@ Axios, Nodemon, CORS (errors handling), Express route handling, JSON parsing, Ra
 
 ## Preview
 
-Screenshot of Network tab to show comment moderation service in action:
+Screenshot of Network tab to show comment moderation service in action. Notice that the status of a given comment.
 
 ![comment moderation](./client/public/preview/comment-moderating.png)
 
