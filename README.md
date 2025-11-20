@@ -10,7 +10,7 @@ The application enables the user to create posts and add comments to posts. It d
 
 Data are stored in memory (not in a database) and so won't persist across sessions. To run the program locally, spin up servers from the posts, comments, query, moderation, event-bus, and client directories with the command _npm start_. Refresh the page in the browser to see the UI update once a change is made.
 
-## Learning Objectives
+## Learning Objectives Attained
 
 - To gain a better conceptual and practical understanding of the advantages and complexities of microservices architecture.
 - To build an application with microservices for two resources--posts and comments--then adding a query service and a comment moderation service.
