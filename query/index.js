@@ -9,7 +9,10 @@ app.use(cors());
 const posts = {};
 
 // Get list of posts
-app.get("/posts", (req, res) => {});
+app.get("/posts", (req, res) => {
+  // Send posts object in response
+  res.send(posts);
+});
 
 // Route receives events from event bus
 app.post("/events", (req, res) => {
