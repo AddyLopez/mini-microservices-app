@@ -5,8 +5,12 @@ const axios = require("axios");
 const app = express();
 app.use(bodyParser.json());
 
+const events = [];
+
 app.post("/events", (req, res) => {
   const event = req.body;
+
+  events.push(event); // Most recent event at end of array, oldest event at its start
 
   // Posts Service
   axios.post("http://localhost:4000/events", event).catch((err) => {
@@ -26,6 +30,11 @@ app.post("/events", (req, res) => {
   // Moderation Service
   axios.post("http://localhost:4003/events", event).catch((err) => {
     console.log(err.message);
+  });
+
+  // Get all events that have ever occurred
+  app.get("/events", (req, res) => {
+    res.send(events);
   });
 
   res.send({ status: "OK" });
