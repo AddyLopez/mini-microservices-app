@@ -1,6 +1,12 @@
 # mini-microservices-app
 
+## Description and Usage
+
 A mini microservices app, using React, Express, and NodeJS.
+
+The application enables the user to create posts and add comments to posts. It displays user-created data ("read" functionality in CRUD terms), and it moderates comments with a "pending," "approved," or "rejected" status based on an arbitrary flagged word (e.g. "orange"). An event bus communicates between the different layers of the app to prevent direct dependencies between services.
+
+Data are stored in memory and so won't persist across sessions. Refresh the page to see the UI update once a change is made.
 
 ## Learning Objectives
 
