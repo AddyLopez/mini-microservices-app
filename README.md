@@ -8,7 +8,7 @@ The application enables the user to create posts and add comments to posts. It d
 
 ## Usage
 
-Data are stored in memory (not in a database) and so won't persist across sessions. To run the program locally, spin up servers from the posts, comments, query, moderation, event-bus, and client directories with the command _npm start_. Refresh the page in the browser to see the UI update once a change is made. Comment moderation is not reflected in the UI, so I provided in the Preview section below a screenshot of what's going on under the hood in the Network tab of Google Chrome's Developer Tools.
+Data are stored in memory (not in a database) and so won't persist across sessions. To run the program locally, spin up servers from the posts, comments, query, moderation, event-bus, and client directories with the command _npm start_. Refresh the page in the browser to see the UI update once a change is made.
 
 ## Learning Objectives Attained
 
@@ -18,16 +18,10 @@ Data are stored in memory (not in a database) and so won't persist across sessio
 - To implement a basic event bus from scratch, which handles the emitting and processing of different events across microservices without introducing any direct dependencies.
 - To gain experience handling updates to resources via communication with the event bus.
 
-## Secondary Technologies & Techniques
+### Secondary Technologies & Techniques
 
 Axios, Nodemon, CORS (errors handling), Express route handling, JSON parsing, Random Bytes (for generating random ids), React Hooks, Bootstrap (for rapid prototyping), Diagrams.net (for visualizing microservices architecture and communication between services), zsh (command line), Google Chrome Developer Tools Network tab monitoring for GET and POST requests while testing services
 
-## Preview
-
-Screenshot of Network tab to show comment moderation service in action. Notice the status of a given comment. If the comment contains the word "orange," then it is rejected; otherwise it is approved.
-
-![comment moderation](./client/public/preview/comment-moderating.png)
-
-## Course Attribution
+### Course Attribution
 
 This learning project was instructed by Stephen Grider in his course [Microservices with NodeJS and React](https://www.udemy.com/course/microservices-with-node-js-and-react/?couponCode=CP251118BG1).
