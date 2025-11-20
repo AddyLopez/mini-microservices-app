@@ -48,6 +48,19 @@ app.post("/events", (req, res) => {
   // Print out type of event received from event bus
   console.log("Event Received", req.body.type);
 
+  const { type, data } = req.body;
+
+  if (type === "CommentModerated") {
+    // Find appropriate comment in commentsByPostId which has same id as id in the event, then update its status property
+    const { id, postId, status } = data;
+    const comments = commentsByPostId[postId];
+
+    const comment = comments.find((comment) => {
+      return comment.id === id;
+    });
+    comment.status = status; // Update comment's status with status from event
+  }
+
   // Respond to post request and indicate it went fine
   res.send({});
 });
