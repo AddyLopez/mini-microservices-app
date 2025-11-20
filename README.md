@@ -10,9 +10,9 @@ A mini microservices app, using React, Express, and NodeJS.
 - To implement a basic event bus from scratch, which handles the emitting and processing of different events across microservices without introducing any direct dependencies.
 - To gain experience handling updates to resources via communication with the event bus.
 
-### Secondary Technologies
+### Secondary Technologies & Techniques
 
-Axios, Nodemon, React Hooks, Bootstrap (for rapid prototyping), Diagrams.net (for visualizing microservices architecture and communication between services), zsh (command line)
+Axios, Nodemon, CORS (errors handling), Express route handling, React Hooks, Bootstrap (for rapid prototyping), Diagrams.net (for visualizing microservices architecture and communication between services), zsh (command line), Google Chrome Developer Tools Network tab monitoring for GET and POST requests while testing services
 
 ### Course Attribution
 
