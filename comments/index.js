@@ -44,7 +44,7 @@ app.post("/posts/:id/comments", async (req, res) => {
   res.status(201).send(comments); // Send back entire array of comments
 });
 
-app.post("/events", (req, res) => {
+app.post("/events", async (req, res) => {
   // Print out type of event received from event bus
   console.log("Event Received", req.body.type);
 
@@ -52,13 +52,28 @@ app.post("/events", (req, res) => {
 
   if (type === "CommentModerated") {
     // Find appropriate comment in commentsByPostId which has same id as id in the event, then update its status property
-    const { id, postId, status } = data;
+    const { id, postId, status, content } = data;
     const comments = commentsByPostId[postId];
 
     const comment = comments.find((comment) => {
       return comment.id === id;
     });
     comment.status = status; // Update comment's status with status from event
+
+    // Send CommentUpdated event to event bus
+    await axios
+      .post("http://localhost:4005/events", {
+        type: "CommentUpdated",
+        data: {
+          id,
+          status,
+          postId,
+          content,
+        },
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }
 
   // Respond to post request and indicate it went fine
