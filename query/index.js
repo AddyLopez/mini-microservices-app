@@ -8,16 +8,7 @@ app.use(cors());
 
 const posts = {};
 
-// Get list of posts
-app.get("/posts", (req, res) => {
-  // Send posts object in response
-  res.send(posts);
-});
-
-// Route receives events from event bus
-app.post("/events", (req, res) => {
-  const { type, data } = req.body;
-
+const handleEvent = (type, data) => {
   if (type === "PostCreated") {
     const { id, title } = data;
 
@@ -43,8 +34,20 @@ app.post("/events", (req, res) => {
     comment.status = status;
     comment.content = content;
   }
+};
 
-  console.log(posts);
+// Get list of posts
+app.get("/posts", (req, res) => {
+  // Send posts object in response
+  res.send(posts);
+});
+
+// Route receives events from event bus
+app.post("/events", (req, res) => {
+  const { type, data } = req.body;
+
+  handleEvent(type, data);
+  //console.log(posts);
   // Indicate by response empty object that event was received and processed
   res.send({});
 });
